@@ -1,1 +1,46 @@
+# Get Familiar With DNS
+-STEP 1- 
+- ( ip address show eth_srv ) to see the state of the ( eth_srv ) interface, I can see that this interface is configured to have the ( 192.168.1.1 ) IPv4 address in a network with /24 netmask
+
+-STEP 2- 
+- ( ip address show eth_cli ) to see the state of the ( eth_cli ) interface witch is simluation if a client talking to a server requesting DNS or DHCP traffic, I can see that the interface doesn't have an IPv4 address 
+
+-STEP 3-
+- with dsnmasq installed I know that the configuration for dnsmasq is stored in ( cat /etc/dnsmasq.d/mycompany.conf ) ill run that command to see contents inside the congif file,
+
+-STEP 4- 
+- I can see that dsnmasq is running as a daemon in the backround. I can query the status of the service with the ( sudo service dnsmasq status ) =running 
+ 
+-STEP 4- 
+- stop the ( dnsmasq ) service form running ( sudo service dnsmasq stop ) so we can run it in debug mode 
+
+-STEP 5- 
+- ( sudo nano /etc/dnsmasq.d/mycompany.conf ) To edit the configuration using ( nano ) 
+
+-STEP 6- 
+- When in the configuration at the end of the log file ill add the line ( log-queries ) to tell dnsmasq where to log, the hit "Ctrl-x" to save 
+
+-STEP 7- 
+- Verify the syntac of the file with ( sudo dnsmasq --test -C /etc/dnsmasq.d/mycompany.conf ) withc comes back as ( OK ) 
+
+-STEP 8- 
+- ( sudo service dnsmasq start ) To start the daemon 
+
+-STEP 9- 
+- To test to see what dnsmasq does with DNS queries I will run the ( dig example.com @localhost ) to get the IP address of ( example.com ) 
+
+-STEP 10- 
+- Now ill use the ( sudo tail /var/log/dnsmasq.log ) command to look at the dbug logs written by dnsmasq 
+
+-STEP 11- 
+- It's showing that it forward the request to another DNS server, 
+
+-STEP 12- 
+- Run ( dig example.com @localhost ) and ( sudo tail /var/log/dnsmasq.log ) again to see what its days this time 
+
+-STEP 13- 
+- Now it has used the value that it already cached
+
+-STEP 14- 
+- Run ( dig example.local @localhost ) to request the IP address of a domain that doesn't exist to see what happens, it shows that the name doesn't have an associated IP address, because it didn'y have any information associated with that domain it forwarded the query to the configure DNS server, 
 
