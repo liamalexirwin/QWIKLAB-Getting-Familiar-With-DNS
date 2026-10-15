@@ -9,7 +9,9 @@ QWICKLABS | Linux Virtual Machine | Local DNS configuration
 
 What I Built
 I built a DNS configuration through dnsmasq to conform to the needs of a simulated organization
--No commands
+
+
+COMMANDS
 -ip address show eth_srv
 -cat /etc/dnsmasq.d/mycompany.conf
 -sudo service dnsmasq status
@@ -19,7 +21,7 @@ I built a DNS configuration through dnsmasq to conform to the needs of a simulat
 -sudo service dnsmasq start
 -dig example.com @localhost
 -sudo tail /var/log/dnsmasq.log
--
+
 
 Problems I Encountered & How I Fixed Them
 | Problem with debug logging not being enabled  | didn't stop the dnsmasq service to edit the configuration files in dnsmasq | Stopped the dnsmasq service do i could edit the dnsamasq configuration files to allow debug logging to function |
