@@ -17,7 +17,7 @@ Enable debug logging for troubleshooting
 Verify DNS functionality by testing domain name resolution from the client
 What is DNS?
 
-DNS (Domain Name System) acts as the internet's phone book — it translates human-readable domain names like www.google.com into IP addresses that computers use to communicate. Without DNS, users would need to memorize IP addresses for every website or service they want to reach. Configuring and troubleshooting DNS is one of the most common tasks in IT support.
+DNS (Domain Name System) acts as the internet's phone book, it translates human-readable domain names like www.google.com into IP addresses that computers use to communicate. Without DNS, users would need to memorize IP addresses for every website or service they want to reach. Configuring and troubleshooting DNS is one of the most common tasks in IT support.
 
 What is Dnsmasq?
 
@@ -66,7 +66,7 @@ ping example.com @localhost
 
 Successful resolution confirmed the DNS configuration was working end to end. ✅
 
-Problem Encountered — Debug Logging Not Enabled
+Problem Encountered- Debug Logging Not Enabled
 Issue	Debug logging was not enabled by default
 Symptom	Could not view detailed DNS query logs for troubleshooting
 Cause	The log-queries option was not set in the dnsmasq configuration file
@@ -82,11 +82,11 @@ bash
 # View live DNS logs
 sudo tail -f /var/log/dnsmasq.log
 
-Why this matters in real IT support: Debug logging is one of the first things you enable when troubleshooting a DNS server that isn't working correctly. Being able to read DNS logs lets you see exactly which queries are coming in, which are being resolved, and which are failing — making diagnosis significantly faster.
+Why this matters in real IT support: Debug logging is one of the first things you enable when troubleshooting a DNS server that isn't working correctly. Being able to read DNS logs lets you see exactly which queries are coming in, which are being resolved, and which are failing, making diagnosis significantly faster.
 
 Key Configuration File
 
-/etc/dnsmasq.conf — the main dnsmasq configuration file where all DNS settings are defined.
+/etc/dnsmasq.conf- the main dnsmasq configuration file where all DNS settings are defined.
 
 Commands Used
 bash
