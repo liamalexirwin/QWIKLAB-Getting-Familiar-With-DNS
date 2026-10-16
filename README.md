@@ -97,7 +97,7 @@ nslookup <domain>                  # Test DNS resolution
 ping <domain>                      # Test connectivity using domain name
 sudo tail -f /var/log/dnsmasq.log  # View live DNS query logs
 
-What I Learned
+What I Learned- 
 How dnsmasq is configured as a lightweight DNS server on Linux
 How to edit Linux configuration files to define DNS settings
 How client machines are pointed to a local DNS server for resolution
